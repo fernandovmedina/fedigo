@@ -1,0 +1,74 @@
+<section>
+    <nav class="bg-black text-white w-full flex items-center py-3 relative">
+        <!-- Logo -->
+        <div class="w-1/2 md:w-2/12 pr-5">
+            <a href="/es"><img src="/fedigo_white_logo.png" alt="fedigo_white_logo" class="w-16 md:w-24"></a>
+        </div>
+
+        <!-- Botones del menú móvil -->
+        <div class="w-1/2 md:w-8/12 flex justify-end items-center md:hidden pr-5">
+            <button id="menu-button" class="text-4xl">&#9776;</button>
+        </div>
+
+        <!-- Menú principal para pantallas grandes -->
+        <div class="hidden md:flex md:w-8/12 justify-between items-center px-10">
+            <ul class="flex items-center text-sm">
+                <li><a href="#" class="px-3 font-semibold hover:text-gray-400 hover:font-extrabold">SOBRE NOSOTROS</a></li>
+                <li><a href="#" class="px-3 font-semibold hover:text-gray-400 hover:font-extrabold">SERVICIOS</a></li>
+                <li><a href="#" class="px-3 font-semibold hover:text-gray-400 hover:font-extrabold">CLIENTES</a></li>
+                <li><a href="#" class="px-3 font-semibold hover:text-gray-400 hover:font-extrabold">CONTACTANOS</a></li>
+            </ul>
+            <div class="text-center">
+                <p class="text-xs font-extrabold">HORARIO</p>
+                <p class="text-sm">Lun-Vie 08:00-22:00</p>
+                <p class="text-sm">Sab-Dom 08:00-24:00</p>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div class="hidden md:hidden absolute top-0 left-0 w-full bg-black text-white" id="mobile-nav-links">
+            <div class="flex justify-end px-5 pt-7">
+                <img id="close-button" class="text-2xl hidden" src="/assets/icons/close_white.png" alt="close_white_image">
+            </div>
+            <ul class="flex flex-col items-center py-4">
+                <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-gray-400 hover:font-extrabold">SOBRE NOSOTROS</a></li>
+                <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-gray-400 hover:font-extrabold">SERVICIOS</a></li>
+                <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-gray-400 hover:font-extrabold">CLIENTES</a></li>
+                <li><a href="#" class="px-3 py-2 text-sm font-semibold hover:text-gray-400 hover:font-extrabold">CONTACTANOS</a></li>
+            </ul>
+            <div class="text-center py-4">
+                <p class="text-xs font-extrabold">HORARIO</p>
+                <p class="text-sm">Lun-Vie 08:00-22:00</p>
+                <p class="text-sm">Sab-Dom 08:00-24:00</p>
+            </div>
+            <div class="flex justify-center pb-5 px-5 relative">
+                <a href="/"><img src="/assets/icons/usa_flag.png" alt="usa_flag" class="px-2"></a>
+            </div>
+        </div>
+
+        <!-- Flag section -->
+        <div class="w-2/12 hidden md:flex items-center justify-center px-5 relative">
+            <a href="/"><img src="/assets/icons/usa_flag.png" alt="usa_flag" class="px-2"></a>
+        </div>
+    </nav>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuButton = document.getElementById('menu-button');
+        const closeButton = document.getElementById('close-button');
+        const mobileNavLinks = document.getElementById('mobile-nav-links');
+
+        menuButton.addEventListener('click', function() {
+            mobileNavLinks.classList.remove('hidden');
+            menuButton.classList.add('hidden');
+            closeButton.classList.remove('hidden');
+        });
+
+        closeButton.addEventListener('click', function() {
+            mobileNavLinks.classList.add('hidden');
+            menuButton.classList.remove('hidden');
+            closeButton.classList.add('hidden');
+        });
+    });
+</script>
